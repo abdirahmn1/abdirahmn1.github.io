@@ -3,17 +3,19 @@
 -
   type: github
   icon: 'fab fa-github'
--
-  type: twitter
-  icon: 'fab fa-twitter'
+
+  # type: twitter
+  # icon: 'fab fa-twitter'
 -
   type: email
   icon: 'fas fa-envelope'
   noblank: true            # open link in current tab
 -
-  type: rss
-  icon: 'fas fa-rss'
+  type: link
+  icon: fas fa-link
+  url: 'https://abdirahman.page'
   noblank: true
+  # icon: fas fa-house-user
 
 # Uncomment and complete the url below to enable more contact options
 # -
