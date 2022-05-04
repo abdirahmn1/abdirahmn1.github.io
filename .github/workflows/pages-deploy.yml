@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-        persistent-credentials: false
+          persistent-credentials: false
           fetch-depth: 0  # for posts's lastmod
 
       - name: Setup Ruby
