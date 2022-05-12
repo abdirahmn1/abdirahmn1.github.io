@@ -82,24 +82,19 @@ order: 5
         }
       }).then(response => {
         if (response.ok) {
-          // success.style.display = 'block';
           alert_success()
           form.reset()
         } else {
           response.json().then(data => {
             if (Object.hasOwn(data, 'errors')) {
               alert_error()
-              // fail.style.display = 'block';
-              // fail.innerHTML = data["errors"].map(error => error["message"]).join(", ")
             } else {
-              // fail.style.display = 'block';
               alert_error()
             }
           })
         }
       }).catch(error => {
         alert_error()
-        // fail.style.display = 'block';
       });
     }
     form.addEventListener("submit", handleSubmit)
