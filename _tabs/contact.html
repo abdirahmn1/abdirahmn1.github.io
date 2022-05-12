@@ -9,14 +9,13 @@ icon: fas fa-envelope
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{"/assets/js/scripts.js" | relative_url }}"></script>
 
-<script src="{{"/assets/js/scripts.js" | relative_url }}"></script>
-
 <blockquote class="prompt-warning">
     <div>
       <p>Am currently having problems with receiving forms 😞, drop me an email at <a href="mailto:abdirahman.2q37d@simplelogin.co">abdirahman.2q37d@simplelogin.co</a> to get in touch.</p>
     </div>
 </blockquote>
-<form name="sentMessage" id="contactForm" accept-charset="utf-8" action="https://formspree.io/f/mnqwvgvy" method="POST">
+
+<form name="sentMessage" id="contactForm" accept-charset="utf-8">
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Name</label>
@@ -48,7 +47,7 @@ icon: fas fa-envelope
   <br>
   <div id="success"></div>
   <div class="form-group">
-    <button type="submit" class="btn btn-primary" id="sendMessageButton" onclick="$">Send</button>
+    <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
   </div>
 </form>
 
