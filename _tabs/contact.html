@@ -76,7 +76,7 @@ icon: fas fa-envelope
         $this = $("#sendMessageButton");
         $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
         $.ajax({
-          url: "//formspree.io/f/mnqwvgvy",
+          url: "https://formspree.io/f/mnqwvgvy",
           type: "POST",
           data: {
             name: name,
