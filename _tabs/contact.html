@@ -1,17 +1,11 @@
 ---
 layout: page
-title: Contact
+title: contact
 form: true
 icon: fas fa-envelope
 ---
-
-<blockquote class="prompt-warning">
-    <div>
-      <p>Am currently having problems with receiving forms 😞, drop me an email at <a href="mailto:abdirahman.2q37d@simplelogin.co">abdirahman.2q37d@simplelogin.co</a> to get in touch.</p>
-    </div>
-</blockquote>
-
-<form name="sentMessage" id="contactForm" accept-charset="utf-8">
+<!-- y -->
+<form id="my-form" action="https://formspree.io/f/mnqwvgv" method="POST">
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Name</label>
@@ -36,13 +30,65 @@ icon: fas fa-envelope
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Message</label>
-      <textarea rows="5" name="message" class="form-control" placeholder="Enter your message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+      <textarea rows="5" name="message" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
       <p class="help-block text-danger"></p>
     </div>
   </div>
   <br>
   <div id="success"></div>
   <div class="form-group">
-    <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+    <button type="submit" class="btn btn-primary" id="my-form-button">Submit</button>
   </div>
+  <div id="my-form-success" style="display: none;">
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+        ×
+      </button>
+      <strong>Thanks for your submission! 😊</strong>
+    </div>
+  </div>
+  <div id="my-form-fail" style="display: none;">
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+        ×
+      </button>
+      <strong>Sorry, an error occurred 😞, drop me an email at <a href="mailto:abdirahman.2q37d@simplelogin.co">abdirahman.2q37d@simplelogin.co</a> to get in touch.</strong>
+    </div>
+  </div>
+  <!-- <strong><p id="my-form-status"></p></strong> -->
 </form>
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var fail = document.getElementById("my-form-fail");
+      var success = document.getElementById("my-form-success")
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          success.style.display = 'block';
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              fail.style.display = 'block';
+              // fail.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              fail.style.display = 'block';
+            }
+          })
+        }
+      }).catch(error => {
+        fail.style.display = 'block';
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
