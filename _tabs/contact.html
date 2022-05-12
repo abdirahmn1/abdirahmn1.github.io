@@ -1,11 +1,17 @@
 ---
 layout: page
-title: contact
+title: Contact
 form: true
 icon: fas fa-envelope
 ---
-<!-- y -->
-<form id="my-form" action="https://formspree.io/f/mnqwvgv" method="POST">
+
+<blockquote class="prompt-info">
+  <div>
+    <p>Want to get in touch?, fill out the form below and i'll get back to you as soon as possible</p>
+  </div>
+</blockquote>
+
+<form id="my-form" action="https://formspree.io/f/mnqwvgvy" method="POST">
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Name</label>
@@ -39,27 +45,28 @@ icon: fas fa-envelope
   <div class="form-group">
     <button type="submit" class="btn btn-primary" id="my-form-button">Submit</button>
   </div>
-  <div id="my-form-success" style="display: none;">
-    <div class="alert alert-success">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-        ×
-      </button>
-      <strong>Thanks for your submission! 😊</strong>
-    </div>
-  </div>
-  <div id="my-form-fail" style="display: none;">
-    <div class="alert alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-        ×
-      </button>
-      <strong>Sorry, an error occurred 😞, drop me an email at <a href="mailto:abdirahman.2q37d@simplelogin.co">abdirahman.2q37d@simplelogin.co</a> to get in touch.</strong>
-    </div>
-  </div>
-  <!-- <strong><p id="my-form-status"></p></strong> -->
 </form>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 <script>
     var form = document.getElementById("my-form");
+    
+    function alert_error() {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Sorry, an error occurred 😞, drop me an email at abdirahman.2q37d@simplelogin.co to get in touch.'
+      })
+    }
+    
+    function alert_success() {
+      Swal.fire(
+        'Success',
+          'Form submitted successfully! 😊',
+          'success'
+        )
+    }
     
     async function handleSubmit(event) {
       event.preventDefault();
@@ -74,20 +81,24 @@ icon: fas fa-envelope
         }
       }).then(response => {
         if (response.ok) {
-          success.style.display = 'block';
+          // success.style.display = 'block';
+          alert_success()
           form.reset()
         } else {
           response.json().then(data => {
             if (Object.hasOwn(data, 'errors')) {
-              fail.style.display = 'block';
+              alert_error()
+              // fail.style.display = 'block';
               // fail.innerHTML = data["errors"].map(error => error["message"]).join(", ")
             } else {
-              fail.style.display = 'block';
+              // fail.style.display = 'block';
+              alert_error()
             }
           })
         }
       }).catch(error => {
-        fail.style.display = 'block';
+        alert_error()
+        // fail.style.display = 'block';
       });
     }
     form.addEventListener("submit", handleSubmit)
