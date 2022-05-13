@@ -19,7 +19,9 @@ order: 5
 
 <script src="/assets/js/scripts.js"></script>
 
-<form name="sentMessage" id="contactForm" accept-charset="utf-8">
+<form name="sentMessage" id="contactForm" accept-charset="utf-8" 
+  action="https://formspree.io/f/mnqwvgvy" 
+  method="POST">
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Name</label>
@@ -58,43 +60,48 @@ order: 5
 <!-- Form Validation -->
 <script src="/assets/js/jqBootstrapValidation.js"></script>
 <!-- Send Form -->
-<script>
+<script type="text/javascript">
   function alert_success() {
     Swal.fire(
-      'Good job!',
-      'You clicked the button!',
+      'Success',
+      'Thanks, 😊 form submitted',
       'success'
-    )
-  }
+      )
+    }
   
   function alert_error() {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Something went wrong!'
+      text: 'Something went wrong! 😞 drop me an email at abdirahman.2q37d@simplelogin.co'
     })
   }
+  
+  var form = $('#contactForm');
 
-  $("sendMessageButton").click( function(e) {
+  form.submit( function(e) {
     e.preventDefault();
     var name = $("input#name").val();
     var email = $("input#email").val();
     var phone = $("input#phone").val();
     var message = $("textarea#message").val();
     $.ajax({
-      url: "//formspree.io/f/mnqwvgvy",
-      type: "POST",
-      data: {
-        name: name,
-        phone: phone,
-        email: email,
-        message: message
-      },
+      url: form.attr('action'),
+      type: form.attr('method'),
+      // data: {
+      //   name: name,
+      //   phone: phone,
+      //   email: email,
+      //   message: message
+      // },
+      data: form.serialize(),
       dataType: "json",
       cache: false,
       success: function () {
         // Success message
         alert_success();
+        var reset = document.getElementById('contactForm');
+        reset.reset()
       },
       error: function () {
         // Fail message
