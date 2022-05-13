@@ -84,21 +84,21 @@ order: 5
         if (response.ok) {
           alert_success()
           form.reset()
-          return false
+          return false;
         } else {
           response.json().then(data => {
             if (Object.hasOwn(data, 'errors')) {
               alert_error()
-              return false
+              return false;
             } else {
               alert_error()
-              return false
+              return false;
             }
           })
         }
       }).catch(error => {
         alert_error()
-        return false
+        return false;
       });
     }
     form.addEventListener("submit", handleSubmit)
