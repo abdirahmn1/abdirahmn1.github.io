@@ -88,30 +88,15 @@ order: 5
     $.ajax({
       url: form.attr('action'),
       type: form.attr('method'),
-      // data: {
-      //   name: name,
-      //   phone: phone,
-      //   email: email,
-      //   message: message
-      // },
       data: form.serialize(),
       dataType: "json",
       cache: false,
-      success: function () {
-        // Success message
-        alert_success();
-        var reset = document.getElementById('contactForm');
-        reset.reset()
-      },
-      error: function () {
-        // Fail message
-        alert_error();
-      },
-      complete: function () {
-        setTimeout(function () {
-          $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-        }, 1000);
-      }
+    }).done(function () {
+      alert_success();
+      var reset = document.getElementById("contactForm")
+      reset.reset()
+    }).fail(function () {
+      alert_error()
     });
   });
 </script>
