@@ -64,7 +64,7 @@ order: 5
   function alert_success() {
     Swal.fire(
       'Success',
-      'Thanks, 😊 form submitted',
+      'Thanks! 😊 form submitted',
       'success'
       )
     }
@@ -88,13 +88,16 @@ order: 5
     $.ajax({
       url: form.attr('action'),
       type: form.attr('method'),
-      data: form.serialize(),
+      data: {
+        name: name,
+        phone: phone,
+        email: email,
+        message: message
+      },
       dataType: "json",
-      cache: false,
     }).done(function () {
       alert_success();
-      var reset = document.getElementById("contactForm")
-      reset.reset()
+      document.getElementById("contactForm").reset();
     }).fail(function () {
       alert_error()
     });
