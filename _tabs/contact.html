@@ -19,9 +19,7 @@ order: 5
 
 <script src="/assets/js/scripts.js"></script>
 
-<form name="sentMessage" id="contactForm" accept-charset="utf-8" 
-  action="https://formspree.io/f/mnqwvgvy" 
-  method="POST">
+<form name="sentMessage" id="contactForm" accept-charset="utf-8">
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Name</label>
@@ -86,8 +84,8 @@ order: 5
     var phone = $("input#phone").val();
     var message = $("textarea#message").val();
     $.ajax({
-      url: form.attr('action'),
-      type: form.attr('method'),
+      url: "https://formspree.io/f/mnqwvgvy",
+      type: "POST",
       data: {
         name: name,
         phone: phone,
