@@ -8,7 +8,7 @@ order: 5
 
 <blockquote class="prompt-info">
   <div>
-    <p>Want to get in touch?, fill out the form below and i'll get back to you as soon as possible</p>
+    <p>Want to get in touch? fill out the form below and i'll get back to you as soon as possible</p>
   </div>
 </blockquote>
 
@@ -78,23 +78,27 @@ order: 5
         method: form.method,
         body: data,
         headers: {
-            'Accept': 'application/json'
+          'Accept': 'application/json',
         }
       }).then(response => {
         if (response.ok) {
           alert_success()
           form.reset()
+          return false
         } else {
           response.json().then(data => {
             if (Object.hasOwn(data, 'errors')) {
               alert_error()
+              return false
             } else {
               alert_error()
+              return false
             }
           })
         }
       }).catch(error => {
         alert_error()
+        return false
       });
     }
     form.addEventListener("submit", handleSubmit)
