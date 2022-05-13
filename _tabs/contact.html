@@ -68,14 +68,14 @@ order: 5
         'success'
         )
     }
-    
+
     async function handleSubmit(event) {
       event.preventDefault();
       var fail = document.getElementById("my-form-fail");
       var success = document.getElementById("my-form-success")
       var data = new FormData(event.target);
       fetch(event.target.action, {
-        redirect: "error",
+        redirect: "manual",
         method: form.method,
         body: data,
         headers: {
