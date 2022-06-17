@@ -11,6 +11,10 @@
   icon: 'fas fa-envelope'
   noblank: true            # open link in current tab
 -
+  type: rss
+  icon: 'fas fa-rss'
+  noblank: true
+-
   type: link
   icon: fas fa-link
   url: 'https://abdirahman.page'
