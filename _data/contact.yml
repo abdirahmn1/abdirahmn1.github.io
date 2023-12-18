@@ -1,26 +1,17 @@
 #  The contact options.
 
--
-  type: github
-  icon: 'fab fa-github'
+- type: github
+  icon: "fab fa-github"
 
   # type: twitter
   # icon: 'fab fa-twitter'
--
-  type: email
-  icon: 'fas fa-envelope'
-  noblank: true            # open link in current tab
--
-  type: rss
-  icon: 'fas fa-rss'
-  noblank: true
--
-  type: link
-  icon: fas fa-link
-  url: 'https://abdirahman.page'
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true # open link in current tab
+- type: rss
+  icon: "fas fa-rss"
   noblank: true
   # icon: fas fa-house-user
-
 # Uncomment and complete the url below to enable more contact options
 # -
 #   type: mastodon
