@@ -5,7 +5,7 @@ order: 6
 
 # Hi 👋 I'm Abdirahman Noor
 
-I'm a Full Stack developer and content creator, commited to crafting robust, user-centric web & mobile applications and experiences. I'm always eager to streamline and automate business workflows with `</code>`. When I'm not deep in coding adventures, you'll find me writing technical blogs about what am learning currently or topics that pique my interest 😊
+I'm a Full Stack Software developer and content creator building user-centric web & mobile applications and experiences. I help streamline and automate business workflows with `</code>`. You'll also find me writing technical blogs [here](https://blog.abdirahman.page) 😊
 
 ---
 
@@ -22,11 +22,13 @@ I'm a Full Stack developer and content creator, commited to crafting robust, use
   <img src="https://skillicons.dev/icons?i=git" />
   <img src="https://skillicons.dev/icons?i=linux" />
   <img src="https://skillicons.dev/icons?i=aws" />
+  <img src="https://skillicons.dev/icons?i=gcp" />
+  <img src="https://skillicons.dev/icons?i=cloudflare" />
 </div>
 
 #### Contact
 
-If you'd like to connect with me, pease drop me an email at <a href="mailto:contact@abdirahman.page">contact@abdirahman.page.</a> <br> or connect with me on linkedIn or github below.
+If you'd like to connect with me, drop me an email at <a href="mailto:contact@abdirahman.page">contact@abdirahman.page.</a> <br> or connect with me on linkedIn or github below.
 
 <div>
   <a target="_blank" href="https://www.linkedin.com/in/abdirahmn1/">
