@@ -5,7 +5,7 @@ order: 6
 
 # Hi 👋 I'm Abdirahman Noor
 
-I'm a Full Stack Software developer and content creator building user-centric web & mobile applications and experiences. I help streamline and automate business workflows with `</code>`. You'll also find me writing technical blogs [here](https://blog.abdirahman.page) 😊
+Senior Software Engineer at [Fleetelo](https://www.fleetelo.com) and open-source contributor to [ts-rest](https://ts-rest.com/) — a leading RPC-style HTTP library. I also write technical blogs [here](https://blog.abdirahman.page) sometimes 😊
 
 ---
 
