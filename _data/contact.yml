@@ -1,5 +1,8 @@
 #  The contact options.
 
+- type: linkedin
+  icon: "fab fa-linkedin" # icons powered by <https://fontawesome.com/>
+  url: "https://www.linkedin.com/in/abdirahmn" # Fill with your Linkedin homepage
 - type: github
   icon: "fab fa-github"
 
@@ -17,9 +20,7 @@
 #   type: mastodon
 #   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your mastodon account page
-#- type: peerlist
-#  icon: "fab fa-linkedin" # icons powered by <https://fontawesome.com/>
-#  url: "https://www.peerlist.io/abdirahman" # Fill with your Linkedin homepage
+
 # -
 #   type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
